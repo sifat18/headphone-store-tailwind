@@ -39,12 +39,31 @@ const Hero = () => {
   return (
     <>
       <section className="bg-brandDark text-white">
-        <div className="container bg-red-500 grid grid-cols-2 md:grid-cols-1 min-h-[500px]">
+        <div className="container  grid grid-cols-1 md:grid-cols-1 min-h-[500px]">
           {/* brand */}
-          <div>
-            <h1 className="text-3xl lg:text-6xl font-bold font-varela">
-              {activeData?.title}
-            </h1>
+          <div className="flex flex-col justify-center xl:max-w-[500px]">
+            <div className="space-y-5 text-center md:text-left">
+              <h1 className="text-3xl lg:text-6xl font-bold font-varela">
+                {activeData?.title}
+              </h1>
+              <p className="text-sm leading-loose text-white/80">
+                {activeData?.subtitle}
+              </p>
+              <button
+                style={{
+                  backgroundColor: activeData?.bgColor,
+                }}
+                className="px-4 py-2 inline-block font-normal rounded-sm"
+              >
+                Buy and Listen
+              </button>
+              {/* heaphone separator */}
+              <div className="flex items-center justify-center md:justify-start gap-4 !mt-24">
+                <div className="w-20 h-[1px] bg-white"></div>
+                <p className="uppercase text-sm">Top Headphones for you</p>
+                <div className="w-20 h-[1px] bg-white"></div>
+              </div>
+            </div>
           </div>
           {/* hero image */}
           {/* whatsapp */}
