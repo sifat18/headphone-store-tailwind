@@ -57,6 +57,12 @@ const Hero = () => {
               >
                 Buy and Listen
               </button>
+              {/* heaphone separator */}
+              <div className="flex items-center justify-center md:justify-start gap-4 !mt-24">
+                <div className="w-20 h-[1px] bg-white"></div>
+                <p className="uppercase text-sm">Top Headphones for you</p>
+                <div className="w-20 h-[1px] bg-white"></div>
+              </div>
             </div>
           </div>
           {/* hero image */}
