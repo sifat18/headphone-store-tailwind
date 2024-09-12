@@ -2,6 +2,7 @@ import { useState } from "react";
 import headphone from "../../assets/headphone.png";
 import headphone2 from "../../assets/headphone2.png";
 import headphone3 from "../../assets/headphone3.png";
+import {FaWhatsapp} from "react-icons/fa";
 const Hero = () => {
   const info = [
     {
@@ -38,8 +39,8 @@ const Hero = () => {
   const [activeData, setActiveData] = useState(info[0]);
   return (
     <>
-      <section className="bg-brandDark text-white">
-        <div className="container  grid grid-cols-1 md:grid-cols-1 min-h-[500px]">
+      <section className="bg-brandDark text-white font-varela">
+        <div className="container  grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
           {/* brand */}
           <div className="flex flex-col justify-center xl:max-w-[500px]">
             <div className="space-y-5 text-center md:text-left">
@@ -87,7 +88,11 @@ const Hero = () => {
             </div>
           </div>
           {/* hero image */}
+          <div className="flex flex-col justify-end items-center"><img src={activeData?.image} alt="" className="w-[300px] md:w-[400px] xl:w-[500px]"/></div>
           {/* whatsapp */}
+          <div><a href="">
+            <FaWhatsapp className="text-3xl text-white fixed bottom-10 right-10 hover:rotate-[360deg] z-[99999] mix-blend-difference"/>
+            </a></div>
         </div>
       </section>
     </>
