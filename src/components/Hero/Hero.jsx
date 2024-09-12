@@ -63,6 +63,27 @@ const Hero = () => {
                 <p className="uppercase text-sm">Top Headphones for you</p>
                 <div className="w-20 h-[1px] bg-white"></div>
               </div>
+              {/* headphonme swatyches  */}
+              <div className="grid grid-cols-3 gap-4">
+                {info?.map(i=>{
+                  return (
+                    <div className="grid grid-cols-2 place-items-center cursor-pointer" key={i.id} >
+                    <div>
+                      <img
+                        className="w-[200px]"
+                        src={i.image}
+                        alt={i.title}
+                      />
+                     </div>
+                     <div className="space-y-2">
+                     <p className="text-base font-bold">{i?.price}</p>
+                     <p className=" text-nowrap text-xs font-normal">{i?.modal}</p>
+                     </div>
+                    </div>
+
+                  )
+                })}
+              </div>
             </div>
           </div>
           {/* hero image */}
