@@ -93,17 +93,54 @@ const Hero = () => {
               </motion.h1>
               </UpdateFollower>
               </AnimatePresence>
-              <p className="text-sm leading-loose text-white/80">
+              <AnimatePresence mode="wait">
+                <UpdateFollower mouseOptions={{
+                  backgroundColor: "#FFFFFF",
+                  // zIndex: 999999,
+                  followerSpeed: 0.5,
+                mixBlendMode:"difference",
+                scale:3,
+                // rotate:720,
+                }}>
+              <motion.p key={activeData?.id} 
+              variants={fadeUp(0.2)}
+              initial="hidden"
+              animate="show"
+              exit="exit" className="text-sm leading-loose text-white/80">
                 {activeData?.subtitle}
-              </p>
-              <button
+              </motion.p>
+              </UpdateFollower>
+              </AnimatePresence>
+              <AnimatePresence mode="wait">
+                <UpdateFollower mouseOptions={{
+                  backgroundColor: activeData?.bgColor,
+                  zIndex: 999999,
+                  followerSpeed: 0.5,
+                  rotate:-720,
+               
+                scale:6,
+                backgroundElement:(
+                  <div>
+                    <img src={activeData?.image} alt=""  />
+                  </div>
+                )
+                // rotate:720,
+                }}>
+              <motion.button key={activeData?.id} 
+              variants={fadeUp(0.2)}
+              initial="hidden"
+              animate="show"
+              exit="exit"
                 style={{
                   backgroundColor: activeData?.bgColor,
                 }}
                 className="px-4 py-2 inline-block font-normal rounded-sm"
               >
                 Buy and Listen
-              </button>
+              </motion.button>
+              </UpdateFollower>
+              </AnimatePresence>
+              
               {/* heaphone separator */}
               <div className="flex items-center justify-center md:justify-start gap-4 !mt-24">
                 <div className="w-20 h-[1px] bg-white"></div>
