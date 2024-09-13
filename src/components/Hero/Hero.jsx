@@ -40,7 +40,7 @@ const Hero = () => {
   return (
     <>
       <section className="bg-brandDark text-white font-varela">
-        <div className="container  grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+        <div className="container  grid grid-cols-1 md:grid-cols-2 min-h-[700px]">
           {/* brand */}
           <div className="flex flex-col justify-center xl:max-w-[500px]">
             <div className="space-y-5 text-center md:text-left">
@@ -68,7 +68,7 @@ const Hero = () => {
               <div className="grid grid-cols-3 gap-4">
                 {info?.map(i=>{
                   return (
-                    <div className="grid grid-cols-2 place-items-center cursor-pointer" key={i.id} >
+                    <div onClick={()=>setActiveData(i)} className="grid grid-cols-2 place-items-center cursor-pointer" key={i.id} >
                     <div>
                       <img
                         className="w-[200px]"
@@ -90,8 +90,8 @@ const Hero = () => {
           {/* hero image */}
           <div className="flex flex-col justify-end items-center"><img src={activeData?.image} alt="" className="w-[300px] md:w-[400px] xl:w-[500px]"/></div>
           {/* whatsapp */}
-          <div><a href="">
-            <FaWhatsapp className="text-3xl text-white fixed bottom-10 right-10 hover:rotate-[360deg] z-[99999] mix-blend-difference"/>
+          <div className="text-3xl text-white fixed bottom-10 right-10 hover:rotate-[360deg] duration-500 z-[99999] mix-blend-difference"><a href="">
+            <FaWhatsapp />
             </a></div>
         </div>
       </section>
