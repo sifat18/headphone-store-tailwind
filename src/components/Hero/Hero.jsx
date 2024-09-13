@@ -3,7 +3,37 @@ import headphone from "../../assets/headphone.png";
 import headphone2 from "../../assets/headphone2.png";
 import headphone3 from "../../assets/headphone3.png";
 import {FaWhatsapp} from "react-icons/fa";
+import { UpdateFollower } from 'react-mouse-follower';
+import {AnimatePresence, motion} from "framer-motion";
 const Hero = () => {
+  const fadeUp = (delay)=>{
+    return {
+    hidden:{
+      opacity: 0,
+      y: 100,
+      scale: 0.5,
+    },
+    show:{
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay,
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    exit:{
+      opacity: 0,
+      y: 50,
+      scale:0.5,
+      transition: {
+        duration: 0.2,
+        ease: "easeInOut",
+      },
+    }
+    }
+  }
   const info = [
     {
       id: 1,
@@ -44,9 +74,25 @@ const Hero = () => {
           {/* brand */}
           <div className="flex flex-col justify-center xl:max-w-[500px]">
             <div className="space-y-5 text-center md:text-left">
-              <h1 className="text-3xl lg:text-6xl font-bold font-varela">
+              <AnimatePresence mode="wait">
+                <UpdateFollower mouseOptions={{
+                  backgroundColor: "#FFFFFF",
+                  // zIndex: 999999,
+                  followerSpeed: 0.5,
+                mixBlendMode:"difference",
+                scale:10,
+                // rotate:720,
+                }}>
+              <motion.h1 key={activeData?.id} 
+              variants={fadeUp(0.2)}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              className="text-3xl lg:text-6xl font-bold font-varela">
                 {activeData?.title}
-              </h1>
+              </motion.h1>
+              </UpdateFollower>
+              </AnimatePresence>
               <p className="text-sm leading-loose text-white/80">
                 {activeData?.subtitle}
               </p>
