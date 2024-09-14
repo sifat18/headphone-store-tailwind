@@ -1,6 +1,7 @@
 import { UpdateFollower } from "react-mouse-follower";
 import Navbar from "./components/Navbar/Navbar.";
 import Hero from "./components/Hero/Hero";
+import Services from "./components/Service/Services";
 const App = () => {
   return (
     <main className="overflow-x-hidden">
@@ -15,6 +16,7 @@ const App = () => {
         <Navbar />
         <Hero />
       </UpdateFollower>
+        <Services/>
     </main>
   );
 };
