@@ -1,4 +1,4 @@
-import React from "react";
+
 import Icon1 from '../../icons/obj1.png';
 import Icon2 from '../../icons/obj2.png';
 import Icon3 from '../../icons/obj3.png';
@@ -34,13 +34,24 @@ const Services = () => {
   <section className="bg-gray-100 font-poppins py-8">
     <div className="container">
         <h1 className="text-3xl font-bold text-center pb-10">Services </h1>
-    </div>
-    <div>
+   
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {data?.map(i=>(
-            <UpdateFollower key={i.id}>
-                <div>
-                    <img src={i?.icon} alt="" />
+            <UpdateFollower key={i.id} mouseOptions={{
+                backgroundColor:"white",
+                followSpeed:.5,
+                zIndex:9999,
+                scale:5,
+                rotate:360,
+                backgroundElement:(
                     <div>
+                        <img src={i?.icon} alt=""  />
+                    </div>
+                )
+            }}>
+                <div className="flex flex-col justify-center items-center max-w-[300px] mx-auto p-5 shadow-lg rounded-xl bg-white">
+                    <img src={i?.icon} alt="" className="w-[100px] mb-4"/>
+                    <div className="space-y-2 text-center">
                         <h1 className="text-2xl font-bold">
                             {i?.title}
                         </h1>
@@ -50,6 +61,7 @@ const Services = () => {
 
             </UpdateFollower>
         ))}
+    </div>
     </div>
   </section>
   
