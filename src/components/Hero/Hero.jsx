@@ -151,6 +151,15 @@ const Hero = () => {
               <div className="grid grid-cols-3 gap-4">
                 {info?.map(i=>{
                   return (
+                    <UpdateFollower key={i.id} mouseOptions={{
+                      backgroundColor: i.bgColor,
+                      zIndex: 9999,
+                      followSpeed: 0.5,
+                      text:"View Details",
+                    scale:5,
+                    textFontSize:"3px"
+                    // rotate:720,
+                    }}>
                     <div onClick={()=>setActiveData(i)} className="grid grid-cols-2 place-items-center cursor-pointer" key={i.id} >
                     <div>
                       <img
@@ -164,14 +173,26 @@ const Hero = () => {
                      <p className=" text-nowrap text-xs font-normal">{i?.modal}</p>
                      </div>
                     </div>
-
+                    </UpdateFollower>
                   )
                 })}
               </div>
             </div>
           </div>
           {/* hero image */}
-          <div className="flex flex-col justify-end items-center"><img src={activeData?.image} alt="" className="w-[300px] md:w-[400px] xl:w-[500px]"/></div>
+          <div className="flex flex-col justify-end items-center">
+          <AnimatePresence mode="wait">
+            <motion.img key={activeData?.id} 
+             
+              initial={{opacity: 0,scale: 0.9,y:100}}
+              animate={{opacity: 1,scale: 1,y:0}}
+              transition={{duration: 0.5,delay: 0.2,ease: 'easeInOut'}}
+              exit={{opacity: 0,scale: 0.9,y:100,transition:{
+                duration: 0.2,
+              }}} src={activeData?.image} alt="" className="w-[300px] md:w-[400px] xl:w-[500px]"/>
+          
+          </AnimatePresence>
+          </div>
           {/* whatsapp */}
           <div className="text-3xl text-white fixed bottom-10 right-10 hover:rotate-[360deg] duration-500 z-[99999] mix-blend-difference"><a href="">
             <FaWhatsapp />
