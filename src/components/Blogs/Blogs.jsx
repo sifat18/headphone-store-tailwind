@@ -2,6 +2,7 @@ import blog1 from '../../assets/blog1.jpg'
 import blog2 from '../../assets/blog2.jpg'
 import blog3 from '../../assets/blog3.jpg'
 import blog4 from '../../assets/blog4.jpg'
+import { UpdateFollower } from 'react-mouse-follower';
 const Blogs = () => {
     const data=[{
         id:1,
@@ -32,7 +33,15 @@ const Blogs = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2'>
             {data?.map(i=>{
                 return(
-                    <div className='flex flex-col items-center justify-center  p-5 max-w-[300px] mx-auto shadow-lg rounded-md bg-white hover:-translate-y-2 duration-300' key={i?.id}>
+                    <UpdateFollower key={i.id} mouseOptions={{
+                        backgroundColor:'black',
+                        zIndex:9999,
+                        followSpeed:1.5,
+                        text:"read",
+                        textFontSize:2,
+                        scale:5,
+                    }}>
+                    <div className='flex flex-col items-center justify-center gap-6 p-5 max-w-[300px] mx-auto shadow-lg rounded-md bg-white hover:-translate-y-2 duration-300' key={i?.id}>
                         <img src={i?.image} alt="" />
                         <div className='space-y-2'>
                             <h1 className='text-lg font-bold font-poppins line-clamp-2'>
@@ -41,6 +50,7 @@ const Blogs = () => {
                             <p className="line-clamp-2">{i?.desc}</p>
                         </div>
                         </div>
+                        </UpdateFollower>
                 );
             })}
         </div>
