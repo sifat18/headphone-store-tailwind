@@ -1,6 +1,21 @@
 import headphone4 from "../../assets/headphone4.png";
 import { motion } from "framer-motion";
+import { UpdateFollower } from 'react-mouse-follower';
+export const fadeUp=(delay)=>{
+  return{
+    hidden:{
+      opacity: 0,
+      y: 100,
+    },
+    show:{
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5,delay:delay, ease: "easeInOut" },
+    }
+  }
+}
 const Banner = () => {
+
   return (
     <>
       <section>
@@ -32,9 +47,17 @@ const Banner = () => {
                 cumque ab voluptatem qui delectus consequatur nisi minus
                 voluptatum magnam, hic accusantium?
               </p>
+              <UpdateFollower mouseOptions={{
+                backgroundColor:"white",
+                zIndex:9999,
+                followSpeed:0.5,
+                mixBlendMode:"difference",
+                scale:5
+              }}>
               <button className="border-2 border-[#e33343] text-[#e33343] px-6 py-2 rounded-md hover:bg-[#e33343] hover:text-white">
                 Shop now
               </button>
+              </UpdateFollower>
             </div>
           </div>
         </div>
