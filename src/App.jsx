@@ -4,6 +4,7 @@ import Hero from "./components/Hero/Hero";
 import Services from "./components/Service/Services";
 import Banner from "./components/Banner/Banner";
 import BannerText from "./components/Banner/BannerText";
+import Blogs from "./components/Blogs/Blogs";
 const App = () => {
   return (
     <main className="overflow-x-hidden">
@@ -30,6 +31,7 @@ const App = () => {
         <Services/>
         <Banner/>
         <BannerText/>
+        <Blogs/>
       </UpdateFollower>
     </main>
   );
