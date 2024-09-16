@@ -38,15 +38,20 @@ const Banner = () => {
           {/* banner text */}
           <div className="flex flex-col justify-center">
             <div className="text-center md:text-left space-y-4 lg:max-w-[450p">
-              <h1 className="text-3xl lg:text-4xl font-semibold font-poppins">
+              <motion.h1 variants={fadeUp(0.2)}
+              initial='hidden'
+              whileInView='show'
+              className="text-3xl lg:text-4xl font-semibold font-poppins">
                 The Latest Headphones With the latest technology
-              </h1>
-              <p>
+              </motion.h1>
+              <motion.p variants={fadeUp(0.2)}
+              initial='hidden'
+              whileInView='show'>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro
                 assumenda non tempore quod ex illo quisquam natus distinctio
                 cumque ab voluptatem qui delectus consequatur nisi minus
                 voluptatum magnam, hic accusantium?
-              </p>
+              </motion.p>
               <UpdateFollower mouseOptions={{
                 backgroundColor:"white",
                 zIndex:9999,
@@ -54,9 +59,11 @@ const Banner = () => {
                 mixBlendMode:"difference",
                 scale:5
               }}>
-              <button className="border-2 border-[#e33343] text-[#e33343] px-6 py-2 rounded-md hover:bg-[#e33343] hover:text-white">
+              <motion.button variants={fadeUp(0.2)}
+              initial='hidden'
+              whileInView='show' className="border-2 border-[#e33343] text-[#e33343] px-6 py-2 rounded-md hover:bg-[#e33343] hover:text-white">
                 Shop now
-              </button>
+              </motion.button>
               </UpdateFollower>
             </div>
           </div>

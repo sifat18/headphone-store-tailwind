@@ -3,7 +3,7 @@ import Icon1 from '../../icons/obj1.png';
 import Icon2 from '../../icons/obj2.png';
 import Icon3 from '../../icons/obj3.png';
 import { UpdateFollower } from 'react-mouse-follower';
-import {AnimatePresence, motion} from "framer-motion";
+import { motion} from "framer-motion";
 import { fadeUp } from '../Banner/Banner';
 const Services = () => {
     const data=[
