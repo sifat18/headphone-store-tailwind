@@ -25,6 +25,13 @@ const Blogs = () => {
         desc:'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sagittis, mauris id fermentum mollis, mauris velit consectetur arcu, vel ultricies neque velit nec velit.',
         link:"#"
     },
+    {
+        id:4,
+        title:'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        image:blog4,
+        desc:'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sagittis, mauris id fermentum mollis, mauris velit consectetur arcu, vel ultricies neque velit nec velit.',
+        link:"#"
+    },
   
 ]
   return <section>
@@ -40,6 +47,7 @@ const Blogs = () => {
                         text:"read",
                         textFontSize:2,
                         scale:5,
+                        
                     }}>
                     <div className='flex flex-col items-center justify-center gap-6 p-5 max-w-[300px] mx-auto shadow-lg rounded-md bg-white hover:-translate-y-2 duration-300' key={i?.id}>
                         <img src={i?.image} alt="" />
