@@ -6,6 +6,7 @@ import Banner from "./components/Banner/Banner";
 import BannerText from "./components/Banner/BannerText";
 import Blogs from "./components/Blogs/Blogs";
 import Footer from "./components/Footer/Footer";
+import Gradient from "./components/practice/Gradient";
 const App = () => {
   return (
     <main className="overflow-x-hidden">
@@ -28,12 +29,12 @@ const App = () => {
           followSpeed: 1.2,
         }}
       >
-        
-        <Services/>
-        <Banner/>
-        <BannerText/>
-        <Blogs/>
-        <Footer/>
+        <Services />
+        <Gradient />
+        <Banner />
+        <BannerText />
+        <Blogs />
+        <Footer />
       </UpdateFollower>
     </main>
   );
